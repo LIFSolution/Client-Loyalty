@@ -10,6 +10,7 @@ namespace Client_Loyalty
         {
             ConfigureAuth(app);
             //
+            //
         }
     }
 }
