@@ -9,6 +9,7 @@ namespace Client_Loyalty
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //
         }
     }
 }
