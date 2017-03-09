@@ -173,6 +173,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\IngresoUsuario.aspx.cs">
+      <DependentUpon>IngresoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\IngresoUsuario.aspx.designer.cs">
+      <DependentUpon>IngresoUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +200,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Modulos\IngresoUsuario.aspx" />
     <Content Include="Modulos\LogIn.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

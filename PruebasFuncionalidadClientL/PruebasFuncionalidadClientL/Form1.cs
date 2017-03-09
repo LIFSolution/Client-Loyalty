@@ -33,7 +33,8 @@ namespace PruebasFuncionalidadClientL
             if (verificarLogIn(user, pass) == true)
             {
                 //DIRIGIRSE A LA SIGUIENTE PAGINA
-                MessageBox.Show("¡CORRECTO!");
+                Form2 f = new Form2();
+                f.ShowDialog();
             }
             else
             {
