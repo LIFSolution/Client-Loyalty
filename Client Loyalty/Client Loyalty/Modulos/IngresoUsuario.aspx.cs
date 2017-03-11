@@ -11,9 +11,10 @@ namespace Client_Loyalty.Modulos
 {
     public partial class IngresoUsuario : System.Web.UI.Page
     {
+        SqlConnection cn = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
         List<String> lista = new List<String>();
         int bandera1 = 0;
-        
+
         ////**************************************************************************** ESTO VA DENTRO DEL BOTON /////////////////////////////////////////////////////////////////////
 
         //String usuario = "";//para almacenar el texto que esta ingresando la persona...
@@ -69,9 +70,8 @@ namespace Client_Loyalty.Modulos
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
             //comboBox1.SelectedIndex = 0;
             llenaTipoCuentas();
         }
@@ -95,20 +95,18 @@ namespace Client_Loyalty.Modulos
                 bandera1 = 0;
             }
         }
-
-
+        
         public void almacenaUsuario(String user, String nombre, String apell, String pass, int rol_id, int empresa_id, int is_active)
         {
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
-                con.Open();
-                string commandString = "INSERT INTO Usuarios(Usuario, Nombres, Apellidos, Contrasena, RollID, EmpresaID, IsActive) values('" + user + "', '" + nombre + "', '" 
+                cn.Open();
+                string commandString = "INSERT INTO Usuarios(Usuario, Nombres, Apellidos, Contrasena, RollID, EmpresaID, IsActive) values('" + user + "', '" + nombre + "', '"
                                         + apell + "', '" + pass + "', " + rol_id + ", " + empresa_id + ", " + is_active + ")";
 
-                SqlCommand cmd = new SqlCommand(commandString, con);
+                SqlCommand cmd = new SqlCommand(commandString, cn);
                 cmd.ExecuteNonQuery();
-
+                cn.Close();
             }
             catch (Exception ex)
             {
@@ -121,7 +119,6 @@ namespace Client_Loyalty.Modulos
             try
             {
                 int bandera = 0;
-                SqlConnection cn = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(string.Format("Select * From TipoCuentas"), cn);
 
@@ -152,7 +149,6 @@ namespace Client_Loyalty.Modulos
             try
             {
                 int line = 0;
-                SqlConnection cn = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
                 cn.Open();
                 SqlCommand cmd;
 
@@ -189,13 +185,12 @@ namespace Client_Loyalty.Modulos
         {
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
-                con.Open();
+                cn.Open();
                 string commandString = "INSERT INTO Cuentas (UsuarioID, TipoCuentaID, Monto, IsActive) values(" + id_user + ", " + id_cuenta + ", '" + monto + "', " + is_active + ")";
 
-                SqlCommand cmd = new SqlCommand(commandString, con);
+                SqlCommand cmd = new SqlCommand(commandString, cn);
                 cmd.ExecuteNonQuery();
-                con.Close();
+                cn.Close();
             }
             catch (Exception ex)
             {

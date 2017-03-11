@@ -4,18 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
-namespace Client_Loyalty
+namespace Client_Loyalty.Modulos
 {
-    public partial class LogIn : System.Web.UI.Page
+    public partial class logIn : System.Web.UI.Page
     {
-        SqlConnection cn;
+        SqlConnection cn = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
         SqlCommand cmd;
         SqlDataReader dr;
-        
+
         ////**************************************************************************** ESTO VA DENTRO DEL BOTON /////////////////////////////////////////////////////////////////////
 
         //String user ="";//RECIBIRA EL USUARIO INGRESADO
@@ -41,7 +40,6 @@ namespace Client_Loyalty
             try
             {
                 int bandera = 0;
-                cn = new SqlConnection("Data Source=LAPTOP-F8V8Q28T\\MYHPSQL;Initial Catalog=LifsControlDb;Integrated Security=True");
                 cn.Open();
                 cmd = new SqlCommand(string.Format("Select * From Usuarios Where Usuario = '{0}' and Contrasena = '{1}'", usu, pass), cn);
 
@@ -58,7 +56,7 @@ namespace Client_Loyalty
                     return true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }

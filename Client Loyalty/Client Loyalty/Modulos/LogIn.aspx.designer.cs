@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client_Loyalty
+namespace Client_Loyalty.Modulos
 {
 
 
-    public partial class LogIn
+    public partial class logIn
     {
 
         /// <summary>
