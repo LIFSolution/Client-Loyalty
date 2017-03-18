@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e4b20d4e78334992b83be33142b7aafe" Name="Diagram1">
+        <EntityTypeShape EntityType="LifsControlDbModel.Cuentas" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.Empresas" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.Movimientos" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.Paises" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.Roles" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.TipoCuentas" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LifsControlDbModel.Usuarios" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Cuentas__TipoCue__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Cuentas__Usuario__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Movimient__Cuent__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Empresas__PaisID__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Roles__EmpresaID__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Usuarios__Empres__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Movimient__Usuar__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="LifsControlDbModel.FK__Usuarios__RollID__1A14E395" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

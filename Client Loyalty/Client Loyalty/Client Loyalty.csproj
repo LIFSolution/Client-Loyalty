@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -175,6 +177,43 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\lifsEF\Cuentas.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\Empresas.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\LifsDBEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LifsDBEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\LifsDBEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\LifsDBEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LifsDBEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\Movimientos.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\Paises.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\Roles.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\TipoCuentas.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lifsEF\Usuarios.cs">
+      <DependentUpon>LifsDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LifsLogic\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Modulos\IngresoUsuario.aspx.cs">
       <DependentUpon>IngresoUsuario.aspx</DependentUpon>
@@ -190,6 +229,13 @@
     <Compile Include="Modulos\logIn.aspx.designer.cs">
       <DependentUpon>logIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Movimientos.aspx.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Movimientos.aspx.designer.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -200,10 +246,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\lifsEF\LifsDBEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LifsDBEF.edmx</DependentUpon>
+      <LastGenOutput>LifsDBEF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\lifsEF\LifsDBEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LifsDBEF.edmx</DependentUpon>
+      <LastGenOutput>LifsDBEF.cs</LastGenOutput>
+    </Content>
     <Content Include="Modulos\IngresoUsuario.aspx" />
     <Content Include="Modulos\logIn.aspx" />
+    <Content Include="Modulos\Movimientos.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\lifsEF\LifsDBEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LifsDBEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\lifsEF\LifsDBEF.edmx.diagram">
+      <DependentUpon>LifsDBEF.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -253,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\LifsViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -261,6 +326,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
